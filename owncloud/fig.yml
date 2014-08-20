@@ -1,0 +1,19 @@
+database:
+  build: mysql/
+  volumes:
+    - /data/mysql/:/var/lib/mysql
+  expose:
+    - "3306"
+  environment:
+    - DB_ADMIN_USER=admin
+    - DB_ADMIN_PASS=admin
+owncloud:
+  build: httpd/
+  links:
+    - database:db
+  volumes:
+    - /data/owncloud/files:/srv/www/htdocs/owncloud/data
+    - /data/owncloud/config:/srv/www/htdocs/owncloud/config
+  ports:
+    - "80:80"
+
