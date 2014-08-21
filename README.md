@@ -21,6 +21,8 @@ entsprechenden Zugriffsrechten versehen sind. Danach wird `fig build` ausgefuehr
 Falls Sie Daten nicht unter /data abspeichern moechte, so muss das in `build.sh` sowie in der `fig.yml`
 angepasst werden.
 
+Auch die Verbindung der einzelnen Container wird ueber `fig.yml` gesteuert. In diesem Beispiel ist es so konfiguriert, das der Webserver Container den Database Container unter dem Namen `db` erreichen kann.
+
 Datenbank Admin User und Passwort koennen ueber Umgebungsvariablen gesteuert werden, siehe 
 `fig.yml`
 
