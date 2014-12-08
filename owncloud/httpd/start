@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#Hacky way to make sure data/config dir have the right permissions
+
+for a in /srv/www/htdocs/owncloud/{data,config};do
+ chown wwwrun $a
+ chmod 750 $a
+done
+
+/usr/sbin/start_apache2 -f /etc/apache2/httpd.conf -DFOREGROUND

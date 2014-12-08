@@ -1,7 +1,7 @@
 database:
   build: mysql/
   volumes:
-    - /data/mysql/:/var/lib/mysql
+    - /tmp/data/mysql/:/var/lib/mysql
   expose:
     - "3306"
   environment:
@@ -12,8 +12,8 @@ owncloud:
   links:
     - database:db
   volumes:
-    - /data/owncloud/files:/srv/www/htdocs/owncloud/data
-    - /data/owncloud/config:/srv/www/htdocs/owncloud/config
+    - /tmp/data/owncloud/files:/srv/www/htdocs/owncloud/data
+    - /tmp/data/owncloud/config:/srv/www/htdocs/owncloud/config
   ports:
     - "80:80"
 
