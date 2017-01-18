@@ -1,5 +1,5 @@
 #FROM andtecheu/opensuse_13.1
-FROM opensuse:13.1
+FROM opensuse:13.2
 MAINTAINER Mattias Giese <giese@b1-systems.de>
 RUN zypper mr -ae
 RUN zypper --non-interactive ar 'http://download.opensuse.org/repositories/isv:/ownCloud:/community:/7.0/openSUSE_13.1/' owncloud
